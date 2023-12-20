@@ -1,0 +1,20 @@
+{
+  "name": "astrolus",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^1.1.5",
+    "styled-components": "^6.1.1"
+  },
+  "devDependencies": {
+    "@astrojs/tailwind": "^1.0.0",
+    "daisyui": "^4.4.20"
+  }
+}

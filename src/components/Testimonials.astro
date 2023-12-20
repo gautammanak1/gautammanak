@@ -1,0 +1,113 @@
+---
+import Container from "./Container.astro"
+
+---
+
+<div class="text-gray-600 dark:text-gray-300" id="testimonials">
+  <Container>
+    <div class=" space-y-1 text-center">
+      <h2 class="text-4xl font-bold text-gray-800 md:text-4xl dark:text-white">"Testimonials"</h2>
+    <style>
+     
+      .bg-white {
+        background-color: #fff;
+      }
+  
+      .dark:bg-gray-900 {
+        background-color: #333;
+        color: #fff;
+      }
+  
+      
+      .testimonial {
+        max-width: 480px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;
+      }
+  
+      .testimonial blockquote {
+        margin-bottom: 5px;
+      }
+  
+      .testimonial figcaption {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+      }
+  
+      .testimonial img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body class="bg-white dark:bg-gray-900">
+    <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6" id="testimonialSection">
+    </div>
+  
+    <script>
+      const testimonials = [
+        {
+          "quote": "Collaborating with KloudiDev has truly revolutionized our business. Their mastery of cloud computing empowered us to swiftly and effectively expand our operations. Their customized approach guaranteed that received precisely what was needed making this partnership a game-changer for us",
+          "author": "Anoop",
+          "position": "Fonder Of Kloudi Dev",
+          "image": "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
+        },
+  
+        {
+       "quote": "Working with KloudiDev has been a game-changer for our business. Their expertise in cloud computing allowed us to scale our operations quickly and efficiently, and their personalized approach ensured that we got what we need",
+          "author": "Arpan",
+          "position": "Founder of Commudle",
+          "image": "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
+      },
+      {
+          "quote": "Partnering with KloudiDev has been a transformative experience for. Their personalized approach ensured that we got what we need",
+          "author": "Gautam manak",
+          "position": "",
+          "image": "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
+        },
+      ];
+  
+      let currentIndex = 0;
+  
+      function updateTestimonial() {
+        const testimonialSection = document.getElementById("testimonialSection");
+        const currentTestimonial = testimonials[currentIndex];
+  
+        const testimonialHTML = `
+          <div class="testimonial">
+            <figure class="max-w-screen-md mx-auto">
+              <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/>
+              </svg> 
+              <blockquote>
+                <p class="text-2xl font-medium text-gray-900 dark:text-white">${currentTestimonial.quote}</p>
+              </blockquote>
+              <figcaption class="flex items-center justify-center mt-6 space-x-3">
+                <img class="w-6 h-6 rounded-full" src="${currentTestimonial.image}" alt="profile picture">
+                <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
+                  <div class="pr-3 font-medium text-gray-900 dark:text-white">${currentTestimonial.author}</div>
+                  <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">${currentTestimonial.position}</div>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+        `;
+  
+        testimonialSection.innerHTML = testimonialHTML;
+  
+        currentIndex = (currentIndex + 1) % testimonials.length;
+      }
+  
+     
+      setInterval(updateTestimonial, 5000);
+  
+
+      updateTestimonial();
+    </script>
+  </Container>
+</div>
