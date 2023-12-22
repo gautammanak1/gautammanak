@@ -3,18 +3,13 @@ import Container from "./Container.astro"
 
 ---
 
-<div class="text-gray-600 dark:text-gray-300" id="">
+<div class="" id="">
   <Container>
-
-<div id="retainable-rss-embed" 
-    data-rss="https://medium.com/feed/@gautamanak1!"
-    data-maxcols="3" 
-    data-layout="slider" 
-    data-poststyle="external" 
-    data-readmore="Read the rest" 
-    data-buttonclass="btn btn-primary" 
-    data-offset="-100"></div>
+    <div class=" space-y-1 text-center">
+      <h2 class="text-4xl font-bold text-gray-800 md:text-4xl dark:text-white">"Latest Blog"</h2> 
     
-    <script src="https://www.retainable.io/assets/retainable/rss-embed/retainable-rss-embed.js"></script>
+    <div class='sk-ww-medium-publication-feed' data-embed-id='246035'></div>
+  </div>
+    <script src='https://widgets.sociablekit.com/medium-publication-feed/widget.js' async defer></script>
 </Container>
 </div>
